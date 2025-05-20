@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto - Shell Collection</title>
+    
+    <!-- Fuentes y iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos (ajusta según cómo estén nombrados realmente) -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/producto.css">
+    <link rel="icon" type="image/png" href="Imagenes/Icon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="Imagenes/LogoLetra.png" alt="Shell Logo">
+                </a>
+                
+                <nav class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#productos" class="nav-link">Productos</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                    <a href="https://www.shell.com" class="nav-link" target="_blank">Shell.com</a>
+                </nav>
+                
+                <div class="nav-actions">
+                    <button class="cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Inicio</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="index.html#productos">Productos</a>
+            <i class="fas fa-chevron-right"></i>
+            <span id="breadcrumbProduct">Producto</span>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-detail-grid">
+                <!-- Galería de imágenes -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="" alt="">
+                        <div class="zoom-indicator">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="thumbnails" id="thumbnails">
+                        <!-- Las miniaturas se generarán dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Información del producto -->
+                <div class="product-info-detail">
+                    <div class="product-category-detail" id="productCategory">Categoría</div>
+                    <h1 class="product-name-detail" id="productName">Nombre del Producto</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-text">4.5 (127 reseñas)</span>
+                    </div>
+
+                    <div class="product-price-detail">
+                        <span class="current-price" id="productPrice">$0</span>
+                        <span class="original-price">$65.000</span>
+                        <span class="discount-tag">23% OFF</span>
+                    </div>
+
+                    <div class="product-description">
+                        <p>Modelo de colección oficial de Shell. Fabricado con materiales de alta calidad y atención al detalle. Perfecto para coleccionistas y entusiastas del automovilismo.</p>
+                    </div>
+
+                    <div class="product-options">
+                        <div class="quantity-selector-detail">
+                            <label>Cantidad:</label>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" id="decreaseQty">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="number" id="quantity" value="1" min="1" max="10">
+                                <button class="quantity-btn" id="increaseQty">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="add-to-cart-detail" id="addToCartDetail">
+                            <i class="fas fa-shopping-cart"></i>
+                            Agregar al Carrito
+                        </button>
+                        <button class="buy-now" id="buyNow">
+                            <i class="fas fa-bolt"></i>
+                            Comprar Ahora
+                        </button>
+                    </div>
+
+                    <div class="product-features-detail">
+                        <h3>Características</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Escala 1:43</li>
+                            <li><i class="fas fa-check"></i> Detalles precisos y auténticos</li>
+                            <li><i class="fas fa-check"></i> Base de exhibición incluida</li>
+                            <li><i class="fas fa-check"></i> Edición limitada</li>
+                            <li><i class="fas fa-check"></i> Certificado de autenticidad</li>
+                        </ul>
+                    </div>
+
+                    <div class="shipping-info">
+                        <div class="info-item">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Envío Gratis</h4>
+                                <p>Para pedidos superiores a $100.000</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Garantía</h4>
+                                <p>12 meses de garantía del fabricante</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <h4>Devoluciones</h4>
+                                <p>30 días para devoluciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="Imagenes/Logo.png" alt="Shell Logo" class="footer-logo">
+                    <p>Colección oficial de modelos Shell. Calidad premium garantizada.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ShellColombia/" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/shell/" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com/shell" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +57 (1) 234-5678</li>
+                        <li><i class="fas fa-envelope"></i> info@shellcollection.co</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Suscríbete para recibir las últimas novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu email" required>
+                        <button type="submit">Suscribir</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shell Collection. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="cart-close" id="cartClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-items" id="cartItems">
+                <!-- Items del carrito se cargarán aquí -->
+            </div>
+            
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <a href="carrito.html" class="checkout-btn">Ver Carrito Completo</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText"></span>
+    </div>
+
+    <!-- Scripts (en orden correcto) -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/producto.js"></script>
+    <script>
+    console.log('Página de producto cargada');
+    console.log('URL:', window.location.href);
+    console.log('Search params:', window.location.search);
+    console.log('Product ID from URL:', new URLSearchParams(window.location.search).get('id'));
+</script>
+</body>
+</html>
