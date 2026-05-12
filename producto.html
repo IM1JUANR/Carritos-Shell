@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto - Shell Collection</title>
-    
-    <!-- Fuentes y iconos -->
+    <title>Producto — Shell Collection</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Estilos (ajusta según cómo estén nombrados realmente) -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/producto.css">
     <link rel="icon" type="image/png" href="Imagenes/Icon.png">
 </head>
 <body>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="mainHeader">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
-                    <img src="Imagenes/LogoLetra.png" alt="Shell Logo">
+                    <img src="Imagenes/LogoLetra.png" alt="Shell Collection">
                 </a>
-                
+
                 <nav class="nav-menu" id="navMenu">
                     <a href="index.html" class="nav-link">Inicio</a>
                     <a href="index.html#productos" class="nav-link">Productos</a>
                     <a href="#contacto" class="nav-link">Contacto</a>
-                    <a href="https://www.shell.com" class="nav-link" target="_blank">Shell.com</a>
+                    <a href="https://www.shell.com" class="nav-link" target="_blank" rel="noopener">Shell.com</a>
                 </nav>
-                
+
                 <div class="nav-actions">
-                    <button class="cart-btn" id="cartBtn">
+                    <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
+                        <span class="cart-count hidden" id="cartCount">0</span>
                     </button>
-                    
-                    <button class="menu-toggle" id="menuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
+                        <span></span><span></span><span></span>
                     </button>
                 </div>
             </div>
@@ -59,34 +54,29 @@
         </div>
     </div>
 
-    <!-- Product Detail Section -->
+    <!-- Product Detail -->
     <section class="product-detail">
         <div class="container">
             <div class="product-detail-grid">
-                <!-- Galería de imágenes -->
+
+                <!-- Galería -->
                 <div class="product-gallery">
-                    <div class="main-image">
+                    <div class="main-image" id="mainImageContainer">
                         <img id="mainImage" src="" alt="">
-                        <div class="zoom-indicator">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
+                        <div class="zoom-indicator"><i class="fas fa-search-plus"></i></div>
                     </div>
-                    <div class="thumbnails" id="thumbnails">
-                        <!-- Las miniaturas se generarán dinámicamente -->
-                    </div>
+                    <div class="thumbnails" id="thumbnails"></div>
                 </div>
 
-                <!-- Información del producto -->
+                <!-- Info -->
                 <div class="product-info-detail">
                     <div class="product-category-detail" id="productCategory">Categoría</div>
-                    <h1 class="product-name-detail" id="productName">Nombre del Producto</h1>
-                    
+                    <h1 class="product-name-detail" id="productName">Cargando...</h1>
+
                     <div class="product-rating">
                         <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
                             <i class="fas fa-star-half-alt"></i>
                         </div>
                         <span class="rating-text">4.5 (127 reseñas)</span>
@@ -106,11 +96,11 @@
                         <div class="quantity-selector-detail">
                             <label>Cantidad:</label>
                             <div class="quantity-controls">
-                                <button class="quantity-btn" id="decreaseQty">
+                                <button class="quantity-btn" id="decreaseQty" aria-label="Disminuir">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <input type="number" id="quantity" value="1" min="1" max="10">
-                                <button class="quantity-btn" id="increaseQty">
+                                <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                                <button class="quantity-btn" id="increaseQty" aria-label="Aumentar">
                                     <i class="fas fa-plus"></i>
                                 </button>
                             </div>
@@ -119,12 +109,10 @@
 
                     <div class="product-actions">
                         <button class="add-to-cart-detail" id="addToCartDetail">
-                            <i class="fas fa-shopping-cart"></i>
-                            Agregar al Carrito
+                            <i class="fas fa-cart-plus"></i> Agregar al Carrito
                         </button>
                         <button class="buy-now" id="buyNow">
-                            <i class="fas fa-bolt"></i>
-                            Comprar Ahora
+                            <i class="fas fa-bolt"></i> Comprar Ahora
                         </button>
                     </div>
 
@@ -142,24 +130,15 @@
                     <div class="shipping-info">
                         <div class="info-item">
                             <i class="fas fa-truck"></i>
-                            <div>
-                                <h4>Envío Gratis</h4>
-                                <p>Para pedidos superiores a $100.000</p>
-                            </div>
+                            <div><h4>Envío Gratis</h4><p>Para pedidos superiores a $100.000</p></div>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4>Garantía</h4>
-                                <p>12 meses de garantía del fabricante</p>
-                            </div>
+                            <div><h4>Garantía</h4><p>12 meses de garantía del fabricante</p></div>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-undo"></i>
-                            <div>
-                                <h4>Devoluciones</h4>
-                                <p>30 días para devoluciones</p>
-                            </div>
+                            <div><h4>Devoluciones</h4><p>30 días para devoluciones</p></div>
                         </div>
                     </div>
                 </div>
@@ -175,28 +154,20 @@
                     <img src="Imagenes/Logo.png" alt="Shell Logo" class="footer-logo">
                     <p>Colección oficial de modelos Shell. Calidad premium garantizada.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/ShellColombia/" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.instagram.com/shell/" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://twitter.com/shell" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
+                        <a href="https://www.facebook.com/ShellColombia/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/shell/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/shell" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
+                    <h4>Explorar</h4>
                     <ul class="footer-links">
-                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="index.html#productos">Productos</a></li>
                         <li><a href="#">Sobre Nosotros</a></li>
                         <li><a href="#">Términos y Condiciones</a></li>
                         <li><a href="#">Política de Privacidad</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
@@ -205,62 +176,68 @@
                         <li><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Newsletter</h4>
-                    <p>Suscríbete para recibir las últimas novedades</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Tu email" required>
-                        <button type="submit">Suscribir</button>
+                    <p>Suscríbete para recibir las últimas novedades.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2024 Shell Collection. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Shell Collection. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Cart Backdrop -->
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
     <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
+    <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true">
         <div class="cart-content">
             <div class="cart-header">
-                <h3>Tu Carrito</h3>
-                <button class="cart-close" id="cartClose">
+                <div class="cart-header-title">
+                    <h3>Carrito</h3>
+                    <span class="cart-header-count" id="cartHeaderCount">0 items</span>
+                </div>
+                <button class="cart-close" id="cartClose" aria-label="Cerrar">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
-            <div class="cart-items" id="cartItems">
-                <!-- Items del carrito se cargarán aquí -->
-            </div>
-            
+            <div class="cart-items" id="cartItems"></div>
             <div class="cart-footer">
+                <div class="shipping-progress" id="shippingProgress">
+                    <p class="shipping-progress-text" id="shippingProgressText"></p>
+                    <div class="shipping-progress-bar">
+                        <div class="shipping-progress-fill" id="shippingProgressFill" style="width:0%"></div>
+                    </div>
+                </div>
                 <div class="cart-total">
-                    <span>Total:</span>
+                    <span>Total</span>
                     <span id="cartTotal">$0</span>
                 </div>
-                <a href="carrito.html" class="checkout-btn">Ver Carrito Completo</a>
+                <a href="carrito.html" class="checkout-btn">
+                    <i class="fas fa-lock"></i> Ir al Carrito
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Notification Toast -->
-    <div class="notification" id="notification">
+    <!-- Notification -->
+    <div class="notification" id="notification" role="alert">
         <i class="fas fa-check-circle"></i>
         <span id="notificationText"></span>
     </div>
 
-    <!-- Scripts (en orden correcto) -->
-    <script src="js/main.js"></script>
+    <!-- Scripts: cart primero, luego main (define productos), luego producto -->
     <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/producto.js"></script>
-    <script>
-    console.log('Página de producto cargada');
-    console.log('URL:', window.location.href);
-    console.log('Search params:', window.location.search);
-    console.log('Product ID from URL:', new URLSearchParams(window.location.search).get('id'));
-</script>
 </body>
 </html>

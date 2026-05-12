@@ -3,102 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shell Collection - Catálogo</title>
-    <meta name="description" content="Colección exclusiva de modelos Shell">
-    
-    <!-- Fuentes y iconos -->
+    <title>Shell Collection — Catálogo Oficial</title>
+    <meta name="description" content="Colección exclusiva de modelos Shell. Miniaturas premium de autos de colección.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Estilos -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="Imagenes/Icon.png">
 </head>
 <body>
+
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="mainHeader">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="index.html" class="logo">
-                    <img src="Imagenes/LogoLetra.png" alt="Shell Logo">
+                    <img src="Imagenes/LogoLetra.png" alt="Shell Collection">
                 </a>
-                
+
                 <nav class="nav-menu" id="navMenu">
                     <a href="index.html" class="nav-link active">Inicio</a>
                     <a href="#productos" class="nav-link">Productos</a>
                     <a href="#contacto" class="nav-link">Contacto</a>
-                    <a href="https://www.shell.com" class="nav-link" target="_blank">Shell.com</a>
+                    <a href="https://www.shell.com" class="nav-link" target="_blank" rel="noopener">Shell.com</a>
                 </nav>
-                
+
                 <div class="nav-actions">
-                    <button class="cart-btn" id="cartBtn">
+                    <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
                         <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count" id="cartCount">0</span>
+                        <span class="cart-count hidden" id="cartCount">0</span>
                     </button>
-                    
-                    <button class="menu-toggle" id="menuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Menú" aria-expanded="false">
+                        <span></span><span></span><span></span>
                     </button>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section con Video -->
+    <!-- Hero -->
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="Videos/VideoBaner.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
             <div class="hero-content">
-                <h1 class="hero-title">Colección Exclusiva Shell</h1>
-                <p class="hero-subtitle">Modelos de colección premium</p>
-                <a href="#productos" class="hero-btn">Ver Catálogo</a>
+                <p class="hero-eyebrow">Colección Oficial Shell</p>
+                <h1 class="hero-title">Modelos de <span>Colección</span><br>Premium</h1>
+                <p class="hero-subtitle">Miniaturas exclusivas para los verdaderos apasionados del automovilismo. Ediciones limitadas con detalles auténticos.</p>
+                <div class="hero-actions">
+                    <a href="#productos" class="hero-btn">
+                        <i class="fas fa-car"></i> Ver Catálogo
+                    </a>
+                    <a href="carrito.html" class="hero-btn-outline">
+                        <i class="fas fa-shopping-cart"></i> Mi Carrito
+                    </a>
+                </div>
             </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Explorar</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- Productos Section -->
+    <!-- Productos -->
     <section class="products-section" id="productos">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Nuestros Productos</h2>
-                <p class="section-subtitle">Descubre nuestra colección exclusiva de modelos Shell</p>
+                <span class="section-tag">Colección 2025</span>
+                <h2 class="section-title">Nuestros Modelos</h2>
+                <p class="section-subtitle">Descubre cada pieza de nuestra colección exclusiva Shell</p>
             </div>
-            
-            <div class="products-grid" id="productsGrid">
-                <!-- Los productos se cargarán dinámicamente -->
+
+            <div class="filters-bar">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-tab active" data-filter="all">Todos</button>
+                    <button class="filter-tab" data-filter="Premium">Premium</button>
+                    <button class="filter-tab" data-filter="Racing">Racing</button>
+                    <button class="filter-tab" data-filter="Formula 1">Formula 1</button>
+                </div>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar modelos..." autocomplete="off">
+                </div>
             </div>
+
+            <div class="products-grid" id="productsGrid"></div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Beneficios -->
     <section class="features-section">
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
-                    <i class="fas fa-truck"></i>
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
                     <h3>Envío Gratis</h3>
                     <p>En compras superiores a $100.000</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Garantía</h3>
                     <p>12 meses de garantía en todos los productos</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-credit-card"></i>
+                    <div class="feature-icon"><i class="fas fa-credit-card"></i></div>
                     <h3>Pago Seguro</h3>
                     <p>Múltiples métodos de pago disponibles</p>
                 </div>
                 <div class="feature-card">
-                    <i class="fas fa-undo"></i>
+                    <div class="feature-icon"><i class="fas fa-undo"></i></div>
                     <h3>Devoluciones</h3>
-                    <p>30 días para devoluciones</p>
+                    <p>30 días para devoluciones sin complicaciones</p>
                 </div>
             </div>
         </div>
@@ -110,30 +129,30 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <img src="Imagenes/Logo.png" alt="Shell Logo" class="footer-logo">
-                    <p>Colección oficial de modelos Shell. Calidad premium garantizada.</p>
+                    <p>Colección oficial de modelos Shell. Calidad premium garantizada para los verdaderos coleccionistas.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/ShellColombia/" target="_blank">
+                        <a href="https://www.facebook.com/ShellColombia/" target="_blank" rel="noopener" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://www.instagram.com/shell/" target="_blank">
+                        <a href="https://www.instagram.com/shell/" target="_blank" rel="noopener" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://twitter.com/shell" target="_blank">
+                        <a href="https://twitter.com/shell" target="_blank" rel="noopener" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
+                    <h4>Explorar</h4>
                     <ul class="footer-links">
                         <li><a href="#productos">Productos</a></li>
                         <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Contacto</h4>
                     <ul class="footer-contact">
@@ -142,52 +161,74 @@
                         <li><i class="fas fa-map-marker-alt"></i> Chía, Cundinamarca, Colombia</li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Newsletter</h4>
-                    <p>Suscríbete para recibir las últimas novedades</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Tu email" required>
-                        <button type="submit">Suscribir</button>
+                    <p>Suscríbete para recibir novedades y lanzamientos exclusivos.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Tu correo electrónico" required>
+                        <button type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Shell Collection. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Shell Collection. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                    <a href="#">Cookies</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Cart Backdrop -->
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
     <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
+    <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Carrito de compras">
         <div class="cart-content">
             <div class="cart-header">
-                <h3>Tu Carrito</h3>
-                <button class="cart-close" id="cartClose">
+                <div class="cart-header-title">
+                    <h3>Carrito</h3>
+                    <span class="cart-header-count" id="cartHeaderCount">0 items</span>
+                </div>
+                <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
-            <div class="cart-items" id="cartItems">
-                <!-- Items del carrito se cargarán aquí -->
-            </div>
-            
+
+            <div class="cart-items" id="cartItems"></div>
+
             <div class="cart-footer">
+                <div class="shipping-progress" id="shippingProgress">
+                    <p class="shipping-progress-text" id="shippingProgressText"></p>
+                    <div class="shipping-progress-bar">
+                        <div class="shipping-progress-fill" id="shippingProgressFill" style="width:0%"></div>
+                    </div>
+                </div>
                 <div class="cart-total">
-                    <span>Total:</span>
+                    <span>Total</span>
                     <span id="cartTotal">$0</span>
                 </div>
-                <a href="carrito.html" class="checkout-btn">Ver Carrito Completo</a>
+                <a href="carrito.html" class="checkout-btn">
+                    <i class="fas fa-lock"></i> Ir al Carrito
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Notification Toast -->
-    <div class="notification" id="notification">
+    <!-- Notification -->
+    <div class="notification" id="notification" role="alert">
         <i class="fas fa-check-circle"></i>
         <span id="notificationText"></span>
     </div>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="js/cart.js"></script>
     <script src="js/main.js"></script>
